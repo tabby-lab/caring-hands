@@ -1,22 +1,23 @@
 // src/App.jsx
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Header from './components/Header'
-import Home from './components/Home' // Correct default import
+import NavBar from './components/NavBar'
+import Home from './components/Home'
 import About from './components/About'
 import Services from './components/Services'
-import Contact from './components/Contact'
+import Contact from './components/Contact' // Import the Contact page
 import Footer from './components/Footer'
 
 const App = () => {
   return (
     <Router>
-      <Header />
+      <NavBar />
       <Routes>
-        <Route path='/' element={<Home />} /> {/* JSX component usage */}
+        <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/services' element={<Services />} />
-        <Route path='/contact' element={<Contact />} />
+        <Route path='/contact' element={<Contact />} />{' '}
+        {/* Add the Contact route */}
       </Routes>
       <Footer />
     </Router>
